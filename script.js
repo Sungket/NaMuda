@@ -1,15 +1,21 @@
 const list = [];
 
-function add() {
-    const item = document.getElementById("itemText");
+function addToList() {
+    const item = document.getElementById("itemText").value;
     list.push(item);
-    alert("item added");
-    generateList();
+    // generateList();
+    let shoppingList = document.getElementById("itemList");
+    let li = document.createElement("li");
+    li.appendChild(document.createTextNode(item));
+    shoppingList.appendChild(li);
 }
 
-function generateList() {
-    for (let i = 0; i < list.length; i++) {
-        let shoppingList = document.getElementById("itemList");
-        shoppingList.append(list[i]);
-    }
-}
+// function generateList() {
+//     for (let i = 0; i < list.length; i++) {
+//         let shoppingList = document.getElementById("itemList");
+//         let li = document.createElement("li");
+//         li.appendChild(document.createTextNode(list[i]));
+//         shoppingList.appendChild(li);
+//     }
+// }
+
