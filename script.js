@@ -32,7 +32,9 @@ function reGenerateList() {
         let deleteBtn = document.createElement("input");
         deleteBtn.type = "button";
         deleteBtn.value = "Delete";
-        deleteBtn.addEventListener("click", deleteItem);
+        deleteBtn.addEventListener("click", function () {
+            deleteItem(list[i]);
+        }, false );
         shoppingList.appendChild(li);
         shoppingList.appendChild(deleteBtn);
     }
@@ -42,5 +44,5 @@ function deleteItem(item) {
     alert(item);
     let index = list.indexOf(item);
     list.splice(index, 1);
-
+    reGenerateList();
 }
